@@ -4,7 +4,7 @@
   "description": "",
   "main": "basics.js",
   "scripts": {
-    "serve": "nodemon ./objects-and-function.js",
+    "serve": "nodemon ./async-await-promise.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
