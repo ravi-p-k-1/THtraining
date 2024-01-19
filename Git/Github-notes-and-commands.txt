@@ -1,0 +1,116 @@
+Git-File history Save.
+
+config set: name and email:
+
+git config --global user.name "name"
+git config --global user.email "email"
+
+git config user.email
+git config user.name
+
+git config --global --edit -> (changing name and email in vim editor)
+
+vim filename
+-to open vim editor for file.
+i
+-to insert in vim editor
+esc + :wq
+-to move out from vim editor
+
+git init-> git repo initialize
+ls(all files) , ls -a (all files + all the hidden files)
+
+git status
+- to know status of all changes
+
+git add example.txt
+- to add changed file to staging area.
+
+git add .
+- move all the files in staging area.
+
+git commit -m "message"
+- to finalize the changes and remove the changed files from staging area
+
+git log
+-to see all the commits' details.
+
+git checkout Hash-id
+-going back to particular commit. all the changes after this will be Rolled back.(not permanenetly)
+
+git checkout master
+-retrieving all the commits that are gone from command written above.
+
+git branch branchName
+-create branch...
+
+git checkout -b branchName
+-creating and moving to branch altogether.
+
+git branch --delete branchName
+
+so checkout is for creating and moving on branches.
+
+git merge branchName
+- merges the branchName with current branch.
+
+
+.gitignore
+- content written in this file will not be displayed.
+
+
+Git with GitHub:
+
+git remote add origin "link"
+- this command is given upon making new reppo on github.
+- here in the command, the "origin" is just name. can be given any.
+
+git remote -v
+displays the github account link. for fetch and push
+
+git branch -M master
+
+git branch -d branch_name
+-- delete the branch
+
+git push origin --delete branch_name
+-- delete branch from remote repo
+
+git push -u origin master / git push
+-push master branch to origin
+
+asks username and password (once)
+
+checkout to other branch and do..
+git push -u origin branchName
+- branch will pushed to GitHub
+
+-* Collaboration *-
+person 1: give access to person 2 in GitHub.
+
+person 2: fork the reppo to our account from account of person1.
+
+
+git clone linkOfReppo
+-clone the Reppo and bring it to gitbash.
+
+now change the code..
+push changed code to forked reppo..
+
+->pull request by person 2(request to apply changes to original reppo like forked Reppo)
+
+-> person 1 will merge the pull request (it is also a commit)
+
+
+git Cherry Pick:
+
+git cherry-pick hashId
+- cherry pick on given hash-id, hash id is of different branch's commit.
+
+git cherry-pick hashId1 hashId2...
+- cherry picked in order...
+
+
+Trunk Based Development:
+smaller changes more frequently and thus the goal is to limit long-lasting branches and avoid merge conflicts
+
