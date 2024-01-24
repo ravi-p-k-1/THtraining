@@ -1,45 +1,30 @@
-import { useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import { CopyButton } from "./CopyButton";
-// import { UseMemoHooks } from './UseMemoHooks';
-// import { UseRefHooks } from './UseRefHooks';
-// import { UseCallbackHooks } from "./UseCallbackHooks";
+import { usePageBottom } from "./usePageBottom";
 
 function App() {
-  // const [val, setVal] = useState(false);
+  const bottom = usePageBottom();
+  const [items, setItems] = useState(["item 1", "item 2", "item 3", "item 4"]);
 
-  // const callback = () => {
-  //   return Math.random();
-  // };
-
-  // const callback = useCallback(
-  //   (pow = 1) => {
-  //     return Math.random()*pow;
-  //   },
-  //   []
-  // )
-  
+  useEffect(() => {
+    if (bottom) {
+      var tempItems = [...items];
+      for (let i = 0; i < 4; i++) {
+        tempItems.push(`items ${tempItems.length + 1}`);
+      }
+      setItems(tempItems);
+    }
+  }, [bottom]);
 
   return (
-    <div className="App">
-{/* -------------------------------------------------------------------------------------------------------------------- */}
-
-  {/* useCallBack hooks example */}
-      {/* <UseCallbackHooks callback={callback} />
-      <button
-        onClick={(e) => {
-          setVal(!val);
-        }}
-      >bool change</button> */}
-
-{/* -------------------------------------------------------------------------------------------------------------------- */}
-
-  {/* Custom Hooks Example Copy To Clipboard */}
-      {/* I am Ravi<CopyButton code={'I am Ravi'} />
-      I am Jinesh<CopyButton code={'I am Jinesh'} />
-      I am Kushal<CopyButton code={'I am Kushal'} /> */}
-
-{/* -------------------------------------------------------------------------------------------------------------------- */}
+    <div key={items.length} className="App">
+      {items.map((item, index) => {
+        return (
+          <div key={index} className="pbitem">
+            {item}
+          </div>
+        );
+      })}
     </div>
   );
 }
