@@ -9,6 +9,7 @@ function App() {
   useEffect(() => {
     if (bottom) {
       var tempItems = [...items];
+      // issue occurs when we do var tempItems = items;
       for (let i = 0; i < 4; i++) {
         tempItems.push(`items ${tempItems.length + 1}`);
       }
