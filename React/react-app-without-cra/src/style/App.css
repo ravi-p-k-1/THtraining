@@ -1,0 +1,31 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.grid-container{
+    display: grid;
+    
+}
+
+.grid-item{
+    text-align: center;
+}
+
+input{
+    margin: 10px;
+}
+
+table{
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+td{
+    border: 2px solid black;
+}

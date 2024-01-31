@@ -45,3 +45,17 @@ display2();
 
 
 console.log("for checking git branch");
+
+// const arr = [[1,2,3],[4,5],[6]];
+
+// function addArrays(...arr){
+//     result=[];
+//     for(i of arr){
+//         console.log(i);
+//         result=[...result, ...i];
+//     }
+//     return result;
+// }
+
+// console.log(addArrays(...arr));
+
