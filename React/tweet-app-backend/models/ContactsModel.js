@@ -9,7 +9,7 @@ export const Contact = sequelize.define('Contact', {
         allowNull: false,
     },
     contact: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     }
 },

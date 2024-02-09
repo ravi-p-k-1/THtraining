@@ -1,8 +1,10 @@
 import express from 'express';
-import { createUserAPI } from './Controller.js';
+import { findAllUserAPI, registerUserAPI, userLoginAPI } from './Controller.js';
 
 export const router = express.Router();
 
-router.route('/createUser').post(createUserAPI);
+router.route('/registerUser').post(registerUserAPI);
+router.route('/userLogin').post(userLoginAPI);
+router.route('/findAllUser').post(findAllUserAPI);
 
 

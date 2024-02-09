@@ -9,12 +9,14 @@ import { DataTypes } from "sequelize";
 import UserService from "./services/UserServices.js";
 import ContactService from "./services/ContactServices.js";
 import { router } from "./router/Router.js";
+import cors from 'cors';
 
 const app = express();
 const PORT = 4000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 app.use('/api/v1', router);
 
 app.listen(PORT, () => {
