@@ -63,10 +63,14 @@ footer{
 .main-content{
   position: fixed;
   top: 50px;
-  left: 200px;
+  /* left: 200px; */
   right: 0px;
   bottom: 35px;
   overflow: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  padding: 10px;
 }
 
 .sidebar{
@@ -96,10 +100,10 @@ footer{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 50px;
-  bottom: 35px;
-  right: 0px;
-  left: 200px;
+  top: inherit;
+  bottom: inherit;
+  right: inherit;
+  left: inherit;
   position: fixed;
   box-shadow: 10px 10px blue;
 }
@@ -111,18 +115,20 @@ footer{
   border: 1px solid black;
   padding: 6%;
   position: fixed;
-  left: 400px;
-  right: 200px;
+  margin-left: 400px;
+  margin-right: 400px;
+  left: inherit;
+  right: inherit;
 }
 
 .login{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 50px;
-  bottom: 35px;
-  right: 0px;
-  left: 200px;
+  top: inherit;
+  bottom: inherit;
+  right: inherit;
+  left: inherit;
   position: fixed;
   box-shadow: 10px 10px blue;
 }
@@ -134,11 +140,22 @@ footer{
   border: 1px solid black;
   padding: 6%;
   position: fixed;
-  left: 400px;
-  right: 200px;
+  margin-left: 400px;
+  margin-right: 400px;
+  left: inherit;
+  right: inherit;
 }
 
-
+.tweet{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  height: 50%;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 80px;
+  box-shadow: 0px 0px 5px 5px rgb(66, 66, 66);
+}
 
 
 .navlink:hover{
@@ -173,4 +190,61 @@ footer{
 .btn-register:hover{
   background-color: rgb(51, 150, 232);
   color: white;
+}
+
+.btn-follow{
+  background-color: rgb(51, 150, 232);
+  color: white;
+  width: 90px;
+}
+
+.btn-unfollow{
+  background-color: rgb(240, 27, 27);
+  color: white;
+  width: 90px;
+}
+
+.btn-follow:hover{
+  background-color: rgb(44, 44, 44);
+  color: white;
+}
+
+.btn-unfollow:hover{
+  background-color: rgb(44, 44, 44);
+  color: white;
+}
+
+.search-bar{
+  width: 800px;
+  height: 40px;
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 6px;
+  transition: all 0.7s;
+  padding: 5px;
+}
+
+.search-bar:focus{
+  box-shadow: 0px 0px 5px 5px rgb(144, 211, 255);
+  font-size: larger;
+}
+
+.user-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.userlistitem{
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 10px;
+  padding: 5px;
+  width: 80%;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+textarea{
+  resize: none;
+  padding: 10px;
 }

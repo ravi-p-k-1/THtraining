@@ -64,6 +64,12 @@ sequelizeSync();
 // const userService = new UserService(User);
 // const contactService = new ContactService(Contact);
 
-// const user = await userService.createUser({ firstName: "ravi", lastName: "kakadia" });
+// const user = await userService.findOneUser({ userName: "ravik", password: "Omen12345nn" });
+// const fuser = await userService.findOneUser({userName: "ravijb", password: "Rvajibha123"});
+
+// console.log('showing followed ', await user.getUser({raw:true}));
+
+// user.removeUser(fuser);
+
 // const contact = await contactService.createContact({phone: 1239494393, userid: user.id});
 

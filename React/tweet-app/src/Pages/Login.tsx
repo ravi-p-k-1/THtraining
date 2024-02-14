@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../Store/UserSlice";
 import { IRootState } from "../Store";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [formObject, setFormObject] = useState<LoginFormObject>({
@@ -13,7 +14,7 @@ export default function Login() {
   });
 
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const loggedIn = useSelector((state: IRootState)=>state.user.loggedIn);
 
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function Login() {
       if (resp.data.statusCode === 200) {
         toast.success(resp.data.message, { position: "top-right" });
         dispatch(userActions.login(resp.data.user));
+        navigate('/home');
         return;
       }
       toast.error(resp.data.message, { position: "top-right" });

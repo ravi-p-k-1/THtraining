@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { UserData } from "../Interfaces/ViewFollowUser";
 
 const userSlice = createSlice({
     name: 'user',
     initialState: {
         loggedIn: false,
-        userData: null,
+        userData: null as UserData | null,
+        followingUsersData: [] as string[],
     },
     reducers:{
         login(state, action){
@@ -14,6 +16,18 @@ const userSlice = createSlice({
         logout(state){
             state.loggedIn = false;
             state.userData = null;
+        },
+        setFollowers(state, action){
+            const temp:UserData[]|[] = action.payload;
+            state.followingUsersData=temp.map((val)=>val.id);
+        },
+        follow(state, action){
+            state.followingUsersData.push(action.payload);
+        },
+        unfollow(state, action){
+            state.followingUsersData.filter((id)=>{
+                return id!==action.payload;
+            });
         }
     }
 });

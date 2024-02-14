@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RegistrationFormObject } from "../Interfaces/LoginRegisterInterfaces";
 import { registerUserAPI } from "../Services/APIservices";
 import { toast } from "react-toastify";
-import { AxiosError, AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import registerPageRegex from "../Utilities/Regex/RegisterPage";
 import { useNavigate } from "react-router-dom";
 
