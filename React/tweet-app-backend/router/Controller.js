@@ -2,9 +2,12 @@ import ContactService from "../services/ContactServices.js";
 import UserService from "../services/UserServices.js";
 import { User } from "../models/UsersModel.js";
 import { Contact } from "../models/ContactsModel.js";
+import { Tweet } from "../models/TweetsModel.js";
+import TweetService from "../services/TweetServices.js";
 
 const userService = new UserService(User);
 const contactService = new ContactService(Contact);
+const tweetService = new TweetService(Tweet);
 
 export const registerUserAPI = async (req, res) => {
   const { firstName, lastName, userName, password, contact } = req.body;
@@ -113,3 +116,13 @@ export const getFollowingusersAPI=async(req, res)=>{
   })
 }
 
+export const uploadTweetAPI = async(req, res)=>{
+  const {title, description, UserId} = req.body;
+  const tweetData = tweetService.createTweet({title, description, UserId});
+
+  res.json({
+    message: 'tweet posted successfully',
+    tweetData: tweetData,
+    statusCode:200,
+  })
+}

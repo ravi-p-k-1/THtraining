@@ -1,6 +1,7 @@
 import axios from "axios";
 import { LoginFormObject, RegistrationFormObject } from "../Interfaces/LoginRegisterInterfaces";
 import { FollowUserAPIObject, GetFollowingUsersAPIObject, SearchAllUserObject } from "../Interfaces/ViewFollowUser";
+import { UploadTweetAPIObject } from "../Interfaces/UserTweet";
 
 const baseURL = "http://localhost:4000/api/v1";
 
@@ -52,5 +53,9 @@ export const unfollowUserAPI = async (reqObj: FollowUserAPIObject)=>{
 
 export const getFollowingUsersAPI = async(reqObj: GetFollowingUsersAPIObject)=>{
   return await axiosInstance.post('/getFollowingUsers', reqObj);
+}
+
+export const uploadTweetAPI = async(reqObj: UploadTweetAPIObject)=>{
+  return await axiosInstance.post('/uploadTweet', reqObj);
 }
 
